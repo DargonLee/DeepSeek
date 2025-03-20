@@ -13,6 +13,7 @@ struct HomeView: View {
     // MARK: - Properties
     @State private var isSidebarVisible = false
     @State private var chatStore: ChatStore = AppContainer.shared.chatStore
+    @State private var modelName: String = DeepSeekServiceConfiguration.model
 
     var body: some View {
         
@@ -35,7 +36,7 @@ struct HomeView: View {
     }
 
     private var navigationTitle: String {
-        chatStore.currentChat?.messages.isEmpty ?? true ? "" : "DeepSeek"
+        chatStore.currentChat?.messages.isEmpty ?? true ? "" : modelName
     }
     
     @ToolbarContentBuilder

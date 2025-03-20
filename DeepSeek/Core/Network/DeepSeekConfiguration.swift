@@ -8,9 +8,9 @@
 import Foundation
 import SwiftUI
 
-enum DeepSeekServiceConfiguration {
-    static let baseURL = "https://api.deepseek.com"
-    static let apiKey = "sk-06c07aa503b34942ad93500f04175a14"
-    static let model = "deepseek-chat"
+struct DeepSeekServiceConfiguration {
+    static let baseURL = "https://chatapi.nloli.xyz"
+    static let apiKey = ""
+    static let model = "claude-3-7-sonnet-20250219-thinking"
     static let historyMessageCount = 10
 }
