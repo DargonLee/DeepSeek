@@ -7,6 +7,18 @@
 
 import SwiftUI
 import SwiftData
+import Alamofire
+
+struct NPWechatModel: Codable {
+    var code: String
+    var data: NPWechatData
+}
+
+struct NPWechatData : Codable {
+    var login_id: String
+    var login_img: String
+}
+
 
 struct HomeView: View {
     
@@ -16,7 +28,6 @@ struct HomeView: View {
     @State private var modelName: String = DeepSeekServiceConfiguration.model
 
     var body: some View {
-        
         ZStack {
             NavigationStack {
                 VStack {
