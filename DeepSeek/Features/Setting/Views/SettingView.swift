@@ -19,6 +19,7 @@ struct SettingView: View {
     // MARK: - App Storage
     @AppStorage("deepseek_apiKey") private var apiKey = DeepSeekServiceConfiguration.apiKey
     @AppStorage("deepseek_baseURL") private var baseURL = DeepSeekServiceConfiguration.baseURL
+    @AppStorage("deepseek_model") private var modelName = DeepSeekServiceConfiguration.model
     @AppStorage("deepseek_historyMessageCount") private var historyMessageCount = DeepSeekServiceConfiguration.historyMessageCount
     // MARK: - State
     @State private var useSystemLanguage = true
@@ -75,6 +76,7 @@ struct SettingView: View {
         Section("API 设置") {
             apiKeyField
             baseURLField
+            modelNameField
             testConnectionButton
         }
     }
@@ -101,6 +103,12 @@ struct SettingView: View {
     
     private var baseURLField: some View {
         TextField("Base URL", text: $baseURL)
+            .autocapitalization(.none)
+            .keyboardType(.URL)
+    }
+    
+    private var modelNameField: some View {
+        TextField("Model", text: $modelName)
             .autocapitalization(.none)
             .keyboardType(.URL)
     }

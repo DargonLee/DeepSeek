@@ -114,7 +114,7 @@ extension DeepseekChatResponseModel {
         let object: String
         let created: Int
         let model: String
-        let systemFingerprint: String
+        let systemFingerprint: String?
         let choices: [StreamChoice]
 
         enum CodingKeys: String, CodingKey {

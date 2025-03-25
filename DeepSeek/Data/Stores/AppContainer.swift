@@ -42,7 +42,7 @@ final class AppContainer {
             )
             
             // 初始化模型上下文
-            self.modelContext = ModelContext(modelContainer)
+            self.modelContext = modelContainer.mainContext
             
             // 初始化聊天存储
             self.chatStore = ChatStore(modelContext: modelContext)
